@@ -10,15 +10,23 @@ import cz.mg.collections.list.List;
 public @Entity class CType implements CEntity {
     private CTypename typename;
     private boolean constant;
+    private boolean isStatic;
     private List<CPointer> pointers = new List<>();
     private List<CArray> arrays = new List<>();
 
     public CType() {
     }
 
-    public CType(CTypename typename, boolean constant, List<CPointer> pointers, List<CArray> arrays) {
+    public CType(
+        CTypename typename,
+        boolean constant,
+        boolean isStatic,
+        List<CPointer> pointers,
+        List<CArray> arrays
+    ) {
         this.typename = typename;
         this.constant = constant;
+        this.isStatic = isStatic;
         this.pointers = pointers;
         this.arrays = arrays;
     }
@@ -39,6 +47,15 @@ public @Entity class CType implements CEntity {
 
     public void setConstant(boolean constant) {
         this.constant = constant;
+    }
+
+    @Required @Value
+    public boolean isStatic() {
+        return isStatic;
+    }
+
+    public void setStatic(boolean isStatic) {
+        this.isStatic = isStatic;
     }
 
     @Required @Part
