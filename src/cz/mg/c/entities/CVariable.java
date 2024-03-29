@@ -5,17 +5,22 @@ import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Shared;
 import cz.mg.annotations.storage.Value;
+import cz.mg.tokenizer.entities.Token;
+
+import java.util.List;
 
 public @Entity class CVariable implements CMainEntity {
     private CType type;
     private String name;
+    private List<Token> expression;
 
     public CVariable() {
     }
 
-    public CVariable(CType type, @Optional String name) {
+    public CVariable(CType type, @Optional String name, @Optional List<Token> expression) {
         this.type = type;
         this.name = name;
+        this.expression = expression;
     }
 
     @Required @Shared
@@ -34,5 +39,14 @@ public @Entity class CVariable implements CMainEntity {
 
     public void setName(@Optional String name) {
         this.name = name;
+    }
+
+    @Optional @Shared
+    public List<Token> getExpression() {
+        return expression;
+    }
+
+    public void setExpression(List<Token> expression) {
+        this.expression = expression;
     }
 }
