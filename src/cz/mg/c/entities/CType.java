@@ -4,13 +4,11 @@ import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Shared;
-import cz.mg.annotations.storage.Value;
 import cz.mg.collections.list.List;
 
 public @Entity class CType implements CEntity {
     private CTypename typename;
-    private boolean constant;
-    private boolean isStatic;
+    private CTypeModifiers modifiers;
     private List<CPointer> pointers = new List<>();
     private List<CArray> arrays = new List<>();
 
@@ -19,14 +17,12 @@ public @Entity class CType implements CEntity {
 
     public CType(
         CTypename typename,
-        boolean constant,
-        boolean isStatic,
+        CTypeModifiers modifiers,
         List<CPointer> pointers,
         List<CArray> arrays
     ) {
         this.typename = typename;
-        this.constant = constant;
-        this.isStatic = isStatic;
+        this.modifiers = modifiers;
         this.pointers = pointers;
         this.arrays = arrays;
     }
@@ -40,22 +36,13 @@ public @Entity class CType implements CEntity {
         this.typename = typename;
     }
 
-    @Required @Value
-    public boolean isConstant() {
-        return constant;
+    @Required @Part
+    public CTypeModifiers getModifiers() {
+        return modifiers;
     }
 
-    public void setConstant(boolean constant) {
-        this.constant = constant;
-    }
-
-    @Required @Value
-    public boolean isStatic() {
-        return isStatic;
-    }
-
-    public void setStatic(boolean isStatic) {
-        this.isStatic = isStatic;
+    public void setModifiers(CTypeModifiers modifiers) {
+        this.modifiers = modifiers;
     }
 
     @Required @Part
