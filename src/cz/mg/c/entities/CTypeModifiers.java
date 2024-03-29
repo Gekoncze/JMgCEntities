@@ -7,6 +7,14 @@ public class CTypeModifiers {
     private boolean constant;
     private boolean isStatic;
 
+    public CTypeModifiers() {
+    }
+
+    public CTypeModifiers(boolean constant, boolean isStatic) {
+        this.constant = constant;
+        this.isStatic = isStatic;
+    }
+
     @Required @Value
     public boolean isConstant() {
         return constant;
