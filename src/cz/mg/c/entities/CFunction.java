@@ -6,7 +6,7 @@ import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Shared;
 import cz.mg.collections.list.List;
-import cz.mg.tokenizer.entities.Token;
+import cz.mg.token.Token;
 
 public @Entity class CFunction extends CTypename {
     private CType output;

@@ -4,9 +4,9 @@ import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
-import cz.mg.tokenizer.entities.Token;
+import cz.mg.token.Token;
 import cz.mg.collections.list.List;
-import cz.mg.tokenizer.entities.tokens.WordToken;
+import cz.mg.token.tokens.WordToken;
 
 public @Entity class Macro {
     private WordToken name;

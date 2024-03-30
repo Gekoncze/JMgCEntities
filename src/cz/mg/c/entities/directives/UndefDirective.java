@@ -3,8 +3,8 @@ package cz.mg.c.entities.directives;
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Shared;
-import cz.mg.tokenizer.entities.Token;
-import cz.mg.tokenizer.entities.tokens.WordToken;
+import cz.mg.token.Token;
+import cz.mg.token.tokens.WordToken;
 
 public @Entity class UndefDirective extends Directive {
     public static final String KEYWORD = "undef";

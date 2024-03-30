@@ -4,7 +4,7 @@ import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Shared;
 import cz.mg.collections.list.List;
-import cz.mg.tokenizer.entities.Token;
+import cz.mg.token.Token;
 
 public @Entity class CArray implements CEntity {
     private List<Token> expression = new List<>();

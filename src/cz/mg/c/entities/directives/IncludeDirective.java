@@ -3,7 +3,7 @@ package cz.mg.c.entities.directives;
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Value;
-import cz.mg.tokenizer.entities.tokens.WordToken;
+import cz.mg.token.tokens.WordToken;
 
 import java.nio.file.Path;
 
