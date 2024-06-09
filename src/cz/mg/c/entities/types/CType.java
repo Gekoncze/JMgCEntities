@@ -6,10 +6,11 @@ import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Shared;
 import cz.mg.c.entities.*;
 import cz.mg.collections.list.List;
+import cz.mg.collections.set.Set;
 
 public @Entity class CType implements CEntity {
     private CTypename typename;
-    private CTypeModifiers modifiers;
+    private Set<CModifier> modifiers = new Set<>();
     private List<CPointer> pointers = new List<>();
     private List<CArray> arrays = new List<>();
 
@@ -18,7 +19,7 @@ public @Entity class CType implements CEntity {
 
     public CType(
         CTypename typename,
-        CTypeModifiers modifiers,
+        Set<CModifier> modifiers,
         List<CPointer> pointers,
         List<CArray> arrays
     ) {
@@ -38,11 +39,11 @@ public @Entity class CType implements CEntity {
     }
 
     @Required @Part
-    public CTypeModifiers getModifiers() {
+    public Set<CModifier> getModifiers() {
         return modifiers;
     }
 
-    public void setModifiers(CTypeModifiers modifiers) {
+    public void setModifiers(Set<CModifier> modifiers) {
         this.modifiers = modifiers;
     }
 
