@@ -5,7 +5,7 @@ import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Value;
 
 public @Entity class CPointer implements CEntity {
-    boolean constant;
+    private boolean constant;
 
     public CPointer() {
     }
