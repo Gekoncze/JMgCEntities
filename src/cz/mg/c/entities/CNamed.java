@@ -2,9 +2,9 @@ package cz.mg.c.entities;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Value;
 
-public @Entity interface CMainEntity extends CEntity {
-    @Optional @Shared
+public @Entity interface CNamed {
+    @Optional @Value
     String getName();
 }

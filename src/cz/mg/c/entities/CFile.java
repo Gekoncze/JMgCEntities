@@ -10,12 +10,12 @@ import java.nio.file.Path;
 
 public @Entity class CFile {
     private Path path;
-    private List<CMainEntity> entities = new List<>();
+    private List<CEntity> entities = new List<>();
 
     public CFile() {
     }
 
-    public CFile(Path path, List<CMainEntity> entities) {
+    public CFile(Path path, List<CEntity> entities) {
         this.path = path;
         this.entities = entities;
     }
@@ -30,11 +30,11 @@ public @Entity class CFile {
     }
 
     @Required @Part
-    public List<CMainEntity> getEntities() {
+    public List<CEntity> getEntities() {
         return entities;
     }
 
-    public void setEntities(List<CMainEntity> entities) {
+    public void setEntities(List<CEntity> entities) {
         this.entities = entities;
     }
 }

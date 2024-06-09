@@ -8,7 +8,7 @@ import cz.mg.annotations.storage.Value;
 import cz.mg.collections.list.List;
 import cz.mg.token.Token;
 
-public @Entity class CVariable implements CMainEntity {
+public @Entity class CVariable implements CEntity, CNamed {
     private CType type;
     private String name;
     private Integer bit;
@@ -37,6 +37,7 @@ public @Entity class CVariable implements CMainEntity {
         this.type = type;
     }
 
+    @Override
     @Optional @Value
     public String getName() {
         return name;
