@@ -1,9 +1,10 @@
-package cz.mg.c.entities;
+package cz.mg.c.entities.types;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Shared;
+import cz.mg.c.entities.*;
 import cz.mg.collections.list.List;
 
 public @Entity class CType implements CEntity {

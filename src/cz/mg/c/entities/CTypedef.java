@@ -4,6 +4,7 @@ import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Shared;
+import cz.mg.c.entities.types.CType;
 
 public @Entity class CTypedef extends CTypename {
     private CType type;
