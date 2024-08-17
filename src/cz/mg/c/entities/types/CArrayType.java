@@ -8,14 +8,14 @@ import cz.mg.token.Token;
 
 public @Entity class CArrayType implements CType {
     private CType type;
-    private List<Token> count = new List<>();
+    private List<Token> expression = new List<>();
 
     public CArrayType() {
     }
 
-    public CArrayType(CType type, List<Token> count) {
+    public CArrayType(CType type, List<Token> expression) {
         this.type = type;
-        this.count = count;
+        this.expression = expression;
     }
 
     @Required @Shared
@@ -28,11 +28,11 @@ public @Entity class CArrayType implements CType {
     }
 
     @Required @Shared
-    public List<Token> getCount() {
-        return count;
+    public List<Token> getExpression() {
+        return expression;
     }
 
-    public void setCount(List<Token> count) {
-        this.count = count;
+    public void setExpression(List<Token> expression) {
+        this.expression = expression;
     }
 }
