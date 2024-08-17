@@ -12,7 +12,7 @@ public @Entity class CTypedef extends CTypename {
     public CTypedef() {
     }
 
-    public CTypedef(@Optional String name, CType type) {
+    public CTypedef(String name, CType type) {
         super(name);
         this.type = type;
     }

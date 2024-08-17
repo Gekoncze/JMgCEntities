@@ -17,7 +17,7 @@ public @Entity class CFunction extends CTypename {
     public CFunction() {
     }
 
-    public CFunction(@Optional String name, CType output, List<CVariable> input, List<Token> implementation) {
+    public CFunction(String name, CType output, List<CVariable> input, List<Token> implementation) {
         super(name);
         this.output = output;
         this.input = input;

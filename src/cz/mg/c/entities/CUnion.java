@@ -11,7 +11,7 @@ public @Entity class CUnion extends CTypename {
     public CUnion() {
     }
 
-    public CUnion(@Optional String name, List<CVariable> variables) {
+    public CUnion(String name, List<CVariable> variables) {
         super(name);
         this.variables = variables;
     }

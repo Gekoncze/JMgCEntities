@@ -20,8 +20,7 @@ public @Entity class ElifDirective extends Directive {
         this.expression = expression;
     }
 
-    @Required
-    @Shared
+    @Required @Shared
     public List<Token> getExpression() {
         return expression;
     }
