@@ -6,7 +6,7 @@ import cz.mg.annotations.storage.Shared;
 import cz.mg.collections.list.List;
 import cz.mg.token.Token;
 
-public @Entity class CArrayType implements CType {
+public @Entity class CArrayType implements CWrapperType {
     private CType type;
     private List<Token> expression = new List<>();
 
@@ -18,11 +18,13 @@ public @Entity class CArrayType implements CType {
         this.expression = expression;
     }
 
+    @Override
     @Required @Shared
     public CType getType() {
         return type;
     }
 
+    @Override
     public void setType(CType type) {
         this.type = type;
     }

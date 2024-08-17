@@ -7,7 +7,7 @@ import cz.mg.annotations.storage.Value;
 import cz.mg.c.entities.CModifier;
 import cz.mg.collections.list.List;
 
-public @Entity class CPointerType implements CType {
+public @Entity class CPointerType implements CWrapperType {
     private CType type;
     private List<CModifier> modifiers = new List<>();
 
@@ -24,11 +24,13 @@ public @Entity class CPointerType implements CType {
         this.modifiers = new List<>(modifiers);
     }
 
+    @Override
     @Required @Shared
     public CType getType() {
         return type;
     }
 
+    @Override
     public void setType(CType type) {
         this.type = type;
     }

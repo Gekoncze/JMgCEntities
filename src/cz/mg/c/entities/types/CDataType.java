@@ -2,24 +2,31 @@ package cz.mg.c.entities.types;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
+import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Value;
 import cz.mg.c.entities.CModifier;
+import cz.mg.c.entities.CTypename;
 import cz.mg.collections.list.List;
 
-public @Entity class CNameType implements CType {
-    private String name;
+public @Entity class CDataType implements CType {
+    private CTypename typename;
     private List<CModifier> modifiers = new List<>();
 
-    public CNameType() {
+    public CDataType() {
     }
 
-    @Required @Value
-    public String getName() {
-        return name;
+    public CDataType(CTypename typename, List<CModifier> modifiers) {
+        this.typename = typename;
+        this.modifiers = modifiers;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    @Required @Part
+    public CTypename getTypename() {
+        return typename;
+    }
+
+    public void setTypename(CTypename typename) {
+        this.typename = typename;
     }
 
     @Required @Value
