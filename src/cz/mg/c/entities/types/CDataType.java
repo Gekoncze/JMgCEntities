@@ -6,16 +6,16 @@ import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Value;
 import cz.mg.c.entities.CModifier;
 import cz.mg.c.entities.CTypename;
-import cz.mg.collections.list.List;
+import cz.mg.collections.set.Set;
 
 public @Entity class CDataType implements CType {
     private CTypename typename;
-    private List<CModifier> modifiers = new List<>();
+    private Set<CModifier> modifiers = new Set<>();
 
     public CDataType() {
     }
 
-    public CDataType(CTypename typename, List<CModifier> modifiers) {
+    public CDataType(CTypename typename, Set<CModifier> modifiers) {
         this.typename = typename;
         this.modifiers = modifiers;
     }
@@ -30,11 +30,11 @@ public @Entity class CDataType implements CType {
     }
 
     @Required @Value
-    public List<CModifier> getModifiers() {
+    public Set<CModifier> getModifiers() {
         return modifiers;
     }
 
-    public void setModifiers(List<CModifier> modifiers) {
+    public void setModifiers(Set<CModifier> modifiers) {
         this.modifiers = modifiers;
     }
 }
