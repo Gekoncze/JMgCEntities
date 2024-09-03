@@ -8,14 +8,14 @@ import cz.mg.c.entities.CModifier;
 import cz.mg.c.entities.CTypename;
 import cz.mg.collections.set.Set;
 
-public @Entity class CDataType implements CType {
+public @Entity class CInlineType implements CType {
     private CTypename typename;
     private Set<CModifier> modifiers = new Set<>();
 
-    public CDataType() {
+    public CInlineType() {
     }
 
-    public CDataType(CTypename typename, Set<CModifier> modifiers) {
+    public CInlineType(CTypename typename, Set<CModifier> modifiers) {
         this.typename = typename;
         this.modifiers = modifiers;
     }
