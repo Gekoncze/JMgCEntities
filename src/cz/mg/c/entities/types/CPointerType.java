@@ -5,23 +5,23 @@ import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Shared;
 import cz.mg.annotations.storage.Value;
 import cz.mg.c.entities.CModifier;
-import cz.mg.collections.list.List;
+import cz.mg.collections.set.Set;
 
 public @Entity class CPointerType implements CWrapperType {
     private CType type;
-    private List<CModifier> modifiers = new List<>();
+    private Set<CModifier> modifiers = new Set<>();
 
     public CPointerType() {
     }
 
-    public CPointerType(CType type, List<CModifier> modifiers) {
+    public CPointerType(CType type, Set<CModifier> modifiers) {
         this.type = type;
         this.modifiers = modifiers;
     }
 
     public CPointerType(CType type, CModifier... modifiers) {
         this.type = type;
-        this.modifiers = new List<>(modifiers);
+        this.modifiers = new Set<>(modifiers);
     }
 
     @Override
@@ -35,12 +35,14 @@ public @Entity class CPointerType implements CWrapperType {
         this.type = type;
     }
 
+    @Override
     @Required @Value
-    public List<CModifier> getModifiers() {
+    public Set<CModifier> getModifiers() {
         return modifiers;
     }
 
-    public void setModifiers(List<CModifier> modifiers) {
+    @Override
+    public void setModifiers(Set<CModifier> modifiers) {
         this.modifiers = modifiers;
     }
 }

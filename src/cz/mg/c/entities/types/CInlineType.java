@@ -29,11 +29,13 @@ public @Entity class CInlineType implements CType {
         this.typename = typename;
     }
 
+    @Override
     @Required @Value
     public Set<CModifier> getModifiers() {
         return modifiers;
     }
 
+    @Override
     public void setModifiers(Set<CModifier> modifiers) {
         this.modifiers = modifiers;
     }

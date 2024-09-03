@@ -28,11 +28,13 @@ public @Entity class CNamedType implements CType {
         this.name = name;
     }
 
+    @Override
     @Required @Value
     public Set<CModifier> getModifiers() {
         return modifiers;
     }
 
+    @Override
     public void setModifiers(Set<CModifier> modifiers) {
         this.modifiers = modifiers;
     }
