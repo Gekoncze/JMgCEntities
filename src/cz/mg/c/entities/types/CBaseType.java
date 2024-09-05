@@ -5,27 +5,28 @@ import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
 import cz.mg.annotations.storage.Value;
 import cz.mg.c.entities.CModifier;
+import cz.mg.c.entities.CTypename;
 import cz.mg.collections.set.Set;
 
-public @Entity class CNamedType implements CType {
-    private String name;
+public @Entity class CBaseType implements CType {
+    private CTypename typename;
     private Set<CModifier> modifiers = new Set<>();
 
-    public CNamedType() {
+    public CBaseType() {
     }
 
-    public CNamedType(String name, Set<CModifier> modifiers) {
-        this.name = name;
+    public CBaseType(CTypename typename, Set<CModifier> modifiers) {
+        this.typename = typename;
         this.modifiers = modifiers;
     }
 
     @Required @Part
-    public String getName() {
-        return name;
+    public CTypename getTypename() {
+        return typename;
     }
 
-    public void setName(String name) {
-        this.name = name;
+    public void setTypename(CTypename typename) {
+        this.typename = typename;
     }
 
     @Override
