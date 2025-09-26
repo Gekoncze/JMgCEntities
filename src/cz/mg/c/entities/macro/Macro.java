@@ -4,6 +4,7 @@ import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
+import cz.mg.annotations.storage.Parts;
 import cz.mg.token.Token;
 import cz.mg.collections.list.List;
 import cz.mg.token.tokens.WordToken;
@@ -31,7 +32,7 @@ public @Entity class Macro {
         this.name = name;
     }
 
-    @Optional @Part
+    @Optional @Parts
     public List<Token> getParameters() {
         return parameters;
     }
@@ -40,7 +41,7 @@ public @Entity class Macro {
         this.parameters = parameters;
     }
 
-    @Required @Part
+    @Required @Parts
     public List<Token> getTokens() {
         return tokens;
     }

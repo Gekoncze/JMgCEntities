@@ -2,7 +2,9 @@ package cz.mg.c.entities.types;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Common;
+import cz.mg.annotations.storage.Commons;
+import cz.mg.annotations.storage.Values;
 import cz.mg.c.entities.CModifier;
 import cz.mg.collections.list.List;
 import cz.mg.collections.set.Set;
@@ -22,7 +24,7 @@ public @Entity class CArrayType implements CWrapperType {
     }
 
     @Override
-    @Required @Shared
+    @Required @Common
     public CType getType() {
         return type;
     }
@@ -32,7 +34,7 @@ public @Entity class CArrayType implements CWrapperType {
         this.type = type;
     }
 
-    @Required @Shared
+    @Required @Commons
     public List<Token> getExpression() {
         return expression;
     }
@@ -42,7 +44,8 @@ public @Entity class CArrayType implements CWrapperType {
     }
 
     @Override
-    public @Required Set<CModifier> getModifiers() {
+    @Required @Values
+    public Set<CModifier> getModifiers() {
         return modifiers;
     }
 

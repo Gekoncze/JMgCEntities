@@ -5,6 +5,7 @@ import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Link;
 import cz.mg.annotations.storage.Part;
+import cz.mg.annotations.storage.Parts;
 import cz.mg.collections.list.List;
 import cz.mg.token.Token;
 import cz.mg.token.tokens.WordToken;
@@ -41,7 +42,7 @@ public @Entity class MacroCall {
         this.token = token;
     }
 
-    @Optional @Part
+    @Optional @Parts
     public List<List<Token>> getArguments() {
         return arguments;
     }

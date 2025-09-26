@@ -3,7 +3,8 @@ package cz.mg.c.entities;
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Commons;
+import cz.mg.annotations.storage.Value;
 import cz.mg.collections.list.List;
 import cz.mg.token.Token;
 
@@ -19,7 +20,7 @@ public @Entity class CEnumEntry implements CEntity {
         this.expression = expression;
     }
 
-    @Required @Shared
+    @Required @Value
     public String getName() {
         return name;
     }
@@ -28,7 +29,7 @@ public @Entity class CEnumEntry implements CEntity {
         this.name = name;
     }
 
-    @Optional @Shared
+    @Optional @Commons
     public List<Token> getExpression() {
         return expression;
     }

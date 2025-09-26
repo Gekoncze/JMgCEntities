@@ -3,7 +3,7 @@ package cz.mg.c.entities.types;
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
 import cz.mg.annotations.storage.Part;
-import cz.mg.annotations.storage.Value;
+import cz.mg.annotations.storage.Values;
 import cz.mg.c.entities.CModifier;
 import cz.mg.c.entities.CTypename;
 import cz.mg.collections.set.Set;
@@ -30,7 +30,7 @@ public @Entity class CBaseType implements CType {
     }
 
     @Override
-    @Required @Value
+    @Required @Values
     public Set<CModifier> getModifiers() {
         return modifiers;
     }

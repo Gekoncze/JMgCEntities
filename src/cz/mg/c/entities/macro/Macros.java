@@ -2,7 +2,7 @@ package cz.mg.c.entities.macro;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Part;
+import cz.mg.annotations.storage.Parts;
 import cz.mg.collections.list.List;
 
 public @Entity class Macros {
@@ -12,7 +12,7 @@ public @Entity class Macros {
     public Macros() {
     }
 
-    @Required @Part
+    @Required @Parts
     public List<Macro> getDefinitions() {
         return definitions;
     }
@@ -21,7 +21,7 @@ public @Entity class Macros {
         this.definitions = definitions;
     }
 
-    @Required @Part
+    @Required @Parts
     public List<MacroCall> getCalls() {
         return calls;
     }

@@ -2,7 +2,7 @@ package cz.mg.c.entities;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
-import cz.mg.annotations.storage.Part;
+import cz.mg.annotations.storage.Parts;
 import cz.mg.collections.list.List;
 
 public @Entity class CUnion extends CTypename {
@@ -16,7 +16,7 @@ public @Entity class CUnion extends CTypename {
         this.variables = variables;
     }
 
-    @Optional @Part
+    @Optional @Parts
     public List<CVariable> getVariables() {
         return variables;
     }

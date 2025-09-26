@@ -2,7 +2,7 @@ package cz.mg.c.entities;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Common;
 import cz.mg.c.entities.types.CType;
 
 public @Entity class CTypedef extends CTypename {
@@ -16,7 +16,7 @@ public @Entity class CTypedef extends CTypename {
         this.type = type;
     }
 
-    @Required @Shared
+    @Required @Common
     public CType getType() {
         return type;
     }

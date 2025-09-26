@@ -2,7 +2,7 @@ package cz.mg.c.entities.directives;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Commons;
 import cz.mg.collections.list.List;
 import cz.mg.token.Token;
 import cz.mg.token.tokens.WordToken;
@@ -20,7 +20,7 @@ public @Entity class IfDirective extends Directive {
         this.expression = expression;
     }
 
-    @Required @Shared
+    @Required @Commons
     public List<Token> getExpression() {
         return expression;
     }

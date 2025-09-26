@@ -2,8 +2,8 @@ package cz.mg.c.entities.types;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Shared;
-import cz.mg.annotations.storage.Value;
+import cz.mg.annotations.storage.Common;
+import cz.mg.annotations.storage.Values;
 import cz.mg.c.entities.CModifier;
 import cz.mg.collections.set.Set;
 
@@ -25,7 +25,7 @@ public @Entity class CPointerType implements CWrapperType {
     }
 
     @Override
-    @Required @Shared
+    @Required @Common
     public CType getType() {
         return type;
     }
@@ -36,7 +36,7 @@ public @Entity class CPointerType implements CWrapperType {
     }
 
     @Override
-    @Required @Value
+    @Required @Values
     public Set<CModifier> getModifiers() {
         return modifiers;
     }

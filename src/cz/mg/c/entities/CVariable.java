@@ -3,7 +3,8 @@ package cz.mg.c.entities;
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Common;
+import cz.mg.annotations.storage.Commons;
 import cz.mg.annotations.storage.Value;
 import cz.mg.c.entities.types.CType;
 import cz.mg.collections.list.List;
@@ -29,7 +30,7 @@ public @Entity class CVariable implements CEntity, CNamed {
         this.expression = expression;
     }
 
-    @Required @Shared
+    @Required @Common
     public CType getType() {
         return type;
     }
@@ -57,7 +58,7 @@ public @Entity class CVariable implements CEntity, CNamed {
         this.bit = bit;
     }
 
-    @Optional @Shared
+    @Optional @Commons
     public List<Token> getExpression() {
         return expression;
     }

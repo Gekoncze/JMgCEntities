@@ -3,8 +3,9 @@ package cz.mg.c.entities;
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Optional;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Part;
-import cz.mg.annotations.storage.Shared;
+import cz.mg.annotations.storage.Common;
+import cz.mg.annotations.storage.Commons;
+import cz.mg.annotations.storage.Parts;
 import cz.mg.c.entities.types.CType;
 import cz.mg.collections.list.List;
 import cz.mg.token.Token;
@@ -24,7 +25,7 @@ public @Entity class CFunction extends CTypename {
         this.implementation = implementation;
     }
 
-    @Required @Shared
+    @Required @Common
     public CType getOutput() {
         return output;
     }
@@ -33,7 +34,7 @@ public @Entity class CFunction extends CTypename {
         this.output = output;
     }
 
-    @Required @Part
+    @Required @Parts
     public List<CVariable> getInput() {
         return input;
     }
@@ -42,7 +43,7 @@ public @Entity class CFunction extends CTypename {
         this.input = input;
     }
 
-    @Optional @Shared
+    @Optional @Commons
     public List<Token> getImplementation() {
         return implementation;
     }

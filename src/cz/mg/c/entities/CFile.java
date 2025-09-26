@@ -2,7 +2,7 @@ package cz.mg.c.entities;
 
 import cz.mg.annotations.classes.Entity;
 import cz.mg.annotations.requirement.Required;
-import cz.mg.annotations.storage.Part;
+import cz.mg.annotations.storage.Parts;
 import cz.mg.annotations.storage.Value;
 import cz.mg.collections.list.List;
 
@@ -29,7 +29,7 @@ public @Entity class CFile {
         this.path = path;
     }
 
-    @Required @Part
+    @Required @Parts
     public List<CEntity> getEntities() {
         return entities;
     }
